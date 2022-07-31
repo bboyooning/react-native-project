@@ -21,13 +21,14 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Box from './components/Box';
 import Greeting from './components/Greeting';
 
 const App = () => {
-  const name = 'JSX';
   return (
     <SafeAreaView>
-      <Greeting name={name} />
+      <Box rounded={true} />
+      <Box rounded size="large" color="pink" />
     </SafeAreaView>
   );
 };
