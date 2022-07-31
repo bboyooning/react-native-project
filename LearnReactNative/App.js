@@ -1,12 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
+import React, {useState} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -14,21 +8,17 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import Box from './components/Box';
-import Greeting from './components/Greeting';
 
 const App = () => {
+  const [visible, setVisible] = useState(true);
+  const onPress = () => {
+    setVisible(!visible);
+  };
   return (
     <SafeAreaView>
-      <Box rounded={true} />
-      <Box rounded size="large" color="pink" />
+      <Button title="토글" onPress={onPress} />
+      {visible && <Box rounded={true} size="large" color="pink" />}
     </SafeAreaView>
   );
 };
