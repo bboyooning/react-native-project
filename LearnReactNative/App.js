@@ -1,44 +1,21 @@
 import React, {useState} from 'react';
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
-
-import Box from './components/Box';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import Counter from './components/Counter';
 
 const App = () => {
-  const [visible, setVisible] = useState(true);
-  const onPress = () => {
-    setVisible(!visible);
-  };
+  const [count, setCount] = useState(0);
+  const onIncrease = () => setCount(count + 1);
+  const onDecrease = () => setCount(count - 1);
   return (
-    <SafeAreaView>
-      <Button title="토글" onPress={onPress} />
-      {visible && <Box rounded={true} size="large" color="pink" />}
+    <SafeAreaView style={styles.full}>
+      <Counter count={count} onIncrease={onIncrease} onDecrease={onDecrease} />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  full: {
+    flex: 1,
   },
 });
 
