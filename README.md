@@ -1,3 +1,3 @@
-# react-native-p
+# react-native-project
 
-리액트 네이티브 연습하기
+리액트 네이티브 프로젝트
